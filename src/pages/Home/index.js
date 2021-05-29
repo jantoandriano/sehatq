@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import { Like, Scroll } from "./styles";
+import { Love, Scroll } from "./styles";
 import { HStack, VStack, Container } from "../styles";
 import Searchbar from "../../components/Searchbar";
 import Category from "../../components/Category";
@@ -18,10 +18,13 @@ function Home() {
   const categories = useSelector((state) => state.products.categories);
   const products = useSelector((state) => state.products.productsName);
 
-
   const handleFocus = (e) => {
     history.push("/search-page");
   };
+
+  const handleToWishListPage = () => {
+    history.push("/wishlist")
+  }
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -31,7 +34,7 @@ function Home() {
     <>
       <Container>
         <HStack>
-          <Like />
+          <Love onClick={handleToWishListPage} />
           <Searchbar
             ref={searchRef}
             handleFocus={handleFocus}

@@ -1,13 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 import api from "../api/productApi";
+import { toast } from "react-toastify";
 
 export const productSlice = createSlice({
   name: "products",
   initialState: {
     categories: [],
     productsName: [],
-    status: "idle",
-    error: "",
+    purchasedProducts: [],
+    wishListProducts: [],
   },
   reducers: {
     productsLoaded: (state, action) => {
@@ -16,10 +17,29 @@ export const productSlice = createSlice({
     categoriesLoaded: (state, action) => {
       state.categories = action.payload;
     },
+    purchaseProduct: (state, action) => {
+      let purchasedItem = state.productsName.find(
+        (item) => item.id === action.payload
+      );
+      
+      state.purchasedProducts = [...state.purchasedProducts, purchasedItem];
+      toast.success("Yeah :)");
+    },
+    addWishList: (state, action) => {
+      let wishListItem = state.productsName.find(
+        (item) => item.id === action.payload
+      );
+      state.wishListProducts = [...state.wishListProducts, wishListItem];
+    },
   },
 });
 
-export const { productsLoaded, categoriesLoaded } = productSlice.actions;
+export const {
+  productsLoaded,
+  categoriesLoaded,
+  purchaseProduct,
+  addWishList,
+} = productSlice.actions;
 
 export default productSlice.reducer;
 

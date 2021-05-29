@@ -1,12 +1,17 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { Back, Header, WishlistItem } from "./styles";
+import { useSelector } from "react-redux";
+import { Back, Header } from "./styles";
 import { Container } from "../styles";
 import arrow from "../../assets/arrow_back.svg";
 import Item from "../../components/Item";
 
 function Wishlist() {
   const history = useHistory();
+
+  const wishListProducts = useSelector(
+    (state) => state.products.wishListProducts
+  );
 
   const handleBack = () => {
     history.push("/beranda");
@@ -18,10 +23,9 @@ function Wishlist() {
         <Back src={arrow} onClick={handleBack} />
         <Header>Wishlist</Header>
       </div>
-      <Item id={1} />
-      <Item id={1} />
-      <Item id={1} />
-      <Item id={1} />
+      {wishListProducts.map((val) => (
+        <Item key={val.id} {...val} />
+      ))}
     </Container>
   );
 }

@@ -1,10 +1,10 @@
 import styled from "styled-components";
+import { AiOutlineHeart } from 'react-icons/ai';
 
-export const Like = styled.div`
+export const Love = styled(AiOutlineHeart)`
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: red;
 `;
 
 export const Scroll = styled.div`

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const Wrapper = styled(Link)`
+export const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   margin-top: 40px;
@@ -10,9 +10,10 @@ export const Wrapper = styled(Link)`
 `;
 
 export const Image = styled.img`
-  width: 90px;
-  height: 90px;
+  width: 100px;
+  height: 100px;
   background-color: lavender;
+  object-fit: cover;
 `;
 
 export const Body = styled.div`
