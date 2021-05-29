@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import Checkbox from "../../components/Checkbox";
 import {
   Wrapper,
@@ -11,12 +12,27 @@ import {
   SignIn,
 } from "./styles";
 import { VStack, HStack } from "../styles";
+import {
+  handleLoginFacebook,
+  handleLoginGmail,
+} from "../../features/authSlice";
+import { FaFacebookSquare } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
 
 function Login() {
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const handleSignIn = () => {
     history.push("/beranda");
+  };
+
+  const handleFacebook = async () => {
+    dispatch(handleLoginFacebook());
+  };
+
+  const handleGmail = () => {
+    dispatch(handleLoginGmail());
   };
 
   return (
@@ -31,8 +47,14 @@ function Login() {
       </HStack>
 
       <VStack style={{ marginTop: "20px" }}>
-        <LoginFacebook>Sign in with Facebook</LoginFacebook>
-        <LoginGmail>Sign in with Gmail</LoginGmail>
+        <LoginFacebook onClick={handleFacebook}>
+          <FaFacebookSquare style={{ marginRight: "10px" }} /> Sign in with
+          Facebook
+        </LoginFacebook>
+        <LoginGmail onClick={handleGmail}>
+          <SiGmail style={{ marginRight: "10px" }} />
+          Sign in with Gmail
+        </LoginGmail>
       </VStack>
     </Wrapper>
   );

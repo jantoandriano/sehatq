@@ -2,9 +2,11 @@ import React from "react";
 
 function Checkbox() {
   return (
-    <div style={{display: 'flex'}}>
+    <div style={{ display: "flex", alignItems: "center" }}>
       <input type="checkbox" id="remember" />
-      <label for="remember">Remember Me</label>
+      <label style={{ marginLeft: "10px" }} htmlFor="remember">
+        Remember Me
+      </label>
     </div>
   );
 }
