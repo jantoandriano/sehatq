@@ -3,15 +3,15 @@ import { Wrapper, Image, Body, Title, Price, LinkWrapper } from "./styles";
 
 function Item({ id, title, price, imageUrl }) {
   return (
-    <Wrapper>
-      <LinkWrapper to={`product/${id}`}>
+    <LinkWrapper to={`product/${id}`}>
+      <Wrapper>
         <Image src={imageUrl} />
-      </LinkWrapper>
-      <Body>
-        <Title>{title}</Title>
-        <Price>{price}</Price>
-      </Body>
-    </Wrapper>
+        <Body>
+          <Title>{title}</Title>
+          <Price>{price}</Price>
+        </Body>
+      </Wrapper>
+    </LinkWrapper>
   );
 }
 

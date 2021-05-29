@@ -31,15 +31,13 @@ function Search() {
     setInput(value);
   };
 
-  const items = filterProduct.map(val => (<Item key={val.id} {...val} />))
-
   return (
     <Container>
       <HStack>
         <Back src={arrow} onClick={handleBack} />
         <Searchbar ref={searchRef} value={input} handleSearch={handleSearch} />
       </HStack>
-      {input && items}
+      {input && filterProduct.map(val => (<Item key={val.id} {...val} />))}
     </Container>
   );
 }
