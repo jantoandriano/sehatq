@@ -17,7 +17,7 @@ import {
 import arrow from "../../assets/arrow_back.svg";
 import share from "../../assets/share.svg";
 import { purchaseProduct, addWishList } from "../../features/productSlice";
-
+import { share as Toast } from '../../utils/toast'
 
 function DetailProduct() {
   const history = useHistory();
@@ -31,7 +31,7 @@ function DetailProduct() {
     history.goBack();
   };
 
-  const handleShare = () => window.alert("Product shared");
+  const handleShare = () => Toast("Shared 🦄")
 
   const handleBuy = () => {
     dispatch(purchaseProduct(id));

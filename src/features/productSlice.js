@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import api from "../api/productApi";
-import { toast } from "react-toastify";
+import { share as Toast } from "../utils/toast";
 
 export const productSlice = createSlice({
   name: "products",
@@ -23,7 +23,7 @@ export const productSlice = createSlice({
       );
 
       state.purchasedProducts = [...state.purchasedProducts, purchasedItem];
-      toast.success("Yeah :)");
+      Toast("Enjoy");
     },
     addWishList: (state, action) => {
       let wishListItem = state.productsName.find(
@@ -31,8 +31,7 @@ export const productSlice = createSlice({
       );
 
       state.wishListProducts = [...state.wishListProducts, wishListItem];
-      toast.success("Added to wishlist");
-
+      Toast("Added to Wishlist");
     },
   },
 });
