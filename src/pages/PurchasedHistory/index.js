@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { Back, Header } from "./styles";
 import { Container } from "../styles";
 import arrow from "../../assets/arrow_back.svg";
-import PurchasedItem from "../../components/PurchasedItem";
+import Item from "../../components/Item";
 
 function PurchasedHistory() {
   const history = useHistory();
@@ -18,10 +18,10 @@ function PurchasedHistory() {
         <Back src={arrow} onClick={handleBack} />
         <Header>Purchase History</Header>
       </div>
-      <PurchasedItem />
-      <PurchasedItem />
-      <PurchasedItem />
-      <PurchasedItem />
+      <Item id={1} />
+      <Item id={1} />
+      <Item id={1} />
+      <Item id={1} />
     </Container>
   );
 }

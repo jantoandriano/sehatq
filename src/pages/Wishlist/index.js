@@ -18,10 +18,10 @@ function Wishlist() {
         <Back src={arrow} onClick={handleBack} />
         <Header>Wishlist</Header>
       </div>
-      <Item />
-      <Item />
-      <Item />
-      <Item />
+      <Item id={1} />
+      <Item id={1} />
+      <Item id={1} />
+      <Item id={1} />
     </Container>
   );
 }

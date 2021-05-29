@@ -1,33 +1,45 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 import Searchbar from "../../components/Searchbar";
 import { Back } from "./styles";
 import { HStack, Container } from "../styles";
 import arrow from "../../assets/arrow_back.svg";
-import SearchResult from "../../components/SearchResult";
+import Item from "../../components/Item";
+import filterSearch from "../../utils/filter";
 
 function Search() {
-  const ref = useRef();
+  const [input, setInput] = useState("");
+  const filterProduct = useSelector((state) =>
+    filterSearch(input, state.products.productsName)
+  );
+  const searchRef = useRef();
   const history = useHistory();
 
+
   useEffect(() => {
-    ref.current.focus();
+    searchRef.current.focus();
   }, []);
 
   const handleBack = () => {
     history.push("/beranda");
   };
 
+  const handleSearch = (event) => {
+    const { value } = event.target;
+    setInput(value);
+  };
+
+  const items = filterProduct.map(val => (<Item key={val.id} {...val} />))
+
   return (
     <Container>
       <HStack>
         <Back src={arrow} onClick={handleBack} />
-        <Searchbar ref={ref} />
+        <Searchbar ref={searchRef} value={input} handleSearch={handleSearch} />
       </HStack>
-      <SearchResult/>
-      <SearchResult/>
-      <SearchResult/>
-      <SearchResult/>
+      {input && items}
     </Container>
   );
 }

@@ -6,8 +6,8 @@ function Navigation() {
     <Wrapper>
       <NavbarItem to="/beranda">Home</NavbarItem>
       <NavbarItem to="/">Feed</NavbarItem>
-      <NavbarItem to="/purchase">Cart</NavbarItem>
-      <NavbarItem to="/wishlist">Profile</NavbarItem>
+      <NavbarItem to="/wishlist">Cart</NavbarItem>
+      <NavbarItem to="/purchase">Profile</NavbarItem>
     </Wrapper>
   );
 }

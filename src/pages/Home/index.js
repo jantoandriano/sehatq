@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -11,7 +11,6 @@ import Navigation from "../../components/Navigation";
 import { fetchProducts } from "../../features/productSlice";
 
 function Home() {
-  const [input, setInput] = useState("initialState");
   const searchRef = useRef(null);
   const history = useHistory();
   const dispatch = useDispatch();
@@ -19,9 +18,6 @@ function Home() {
   const categories = useSelector((state) => state.products.categories);
   const products = useSelector((state) => state.products.productsName);
 
-  const handleSearch = () => {
-    setInput(searchRef.current.value);
-  };
 
   const handleFocus = (e) => {
     history.push("/search-page");
@@ -38,7 +34,6 @@ function Home() {
           <Like />
           <Searchbar
             ref={searchRef}
-            handleSearch={handleSearch}
             handleFocus={handleFocus}
           />
         </HStack>

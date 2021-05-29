@@ -1,13 +1,15 @@
 import React from "react";
-import { Wrapper, Image, Body, Title, Price } from "./styles";
+import { Wrapper, Image, Body, Title, Price, LinkWrapper } from "./styles";
 
-function Item() {
+function Item({ id, title, price, imageUrl }) {
   return (
     <Wrapper>
-      <Image />
+      <LinkWrapper to={`product/${id}`}>
+        <Image src={imageUrl} />
+      </LinkWrapper>
       <Body>
-        <Title>Baju</Title>
-        <Price>150000</Price>
+        <Title>{title}</Title>
+        <Price>{price}</Price>
       </Body>
     </Wrapper>
   );
