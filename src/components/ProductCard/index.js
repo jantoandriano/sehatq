@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, ProductName, Wrapper, LinkWrapper } from "./styles";
+import { Image, ProductName, Wrapper, LinkWrapper, Love } from "./styles";
 
 function ProductCard({ id, imageUrl, title }) {
   return (
@@ -8,6 +8,8 @@ function ProductCard({ id, imageUrl, title }) {
         <Image src={imageUrl} />
         <ProductName>{title}</ProductName>
       </LinkWrapper>
+      <Love />
+
     </Wrapper>
   );
 }

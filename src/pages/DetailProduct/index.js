@@ -11,10 +11,10 @@ import {
   ProductDesc,
   ProductPrice,
   BuyButton,
+  Love
 } from "./styles";
 import arrow from "../../assets/arrow_back.svg";
 import share from "../../assets/share.svg";
-import { Like } from "../Home/styles";
 
 function DetailProduct() {
   const history = useHistory();
@@ -40,7 +40,7 @@ function DetailProduct() {
       <ProductBody>
         <HStack>
           <ProductTitle>{title}</ProductTitle>
-          <Like />
+          <Love />
         </HStack>
         <ProductDesc>{description}</ProductDesc>
       </ProductBody>

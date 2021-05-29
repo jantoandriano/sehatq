@@ -1,4 +1,5 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
+import { AiOutlineHeart } from 'react-icons/ai';
 
 export const ProductImage = styled.img`
   width: 100%;
@@ -53,3 +54,10 @@ export const BuyButton = styled.div`
   align-items: center;
   margin-left: 10px;
 `;
+
+export const Love = styled(AiOutlineHeart)`
+  width: 30px;
+  height: 30px;
+  
+`
+
