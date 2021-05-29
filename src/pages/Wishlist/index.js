@@ -1,11 +1,11 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { Back, Header } from "./styles";
+import { Back, Header, WishlistItem } from "./styles";
 import { Container } from "../styles";
 import arrow from "../../assets/arrow_back.svg";
-import PurchasedItem from "../../components/PurchasedItem";
+import Item from "../../components/Item";
 
-function PurchasedHistory() {
+function Wishlist() {
   const history = useHistory();
 
   const handleBack = () => {
@@ -16,14 +16,14 @@ function PurchasedHistory() {
     <Container>
       <div style={{ display: "flex", alignItems: "center" }}>
         <Back src={arrow} onClick={handleBack} />
-        <Header>Purchase History</Header>
+        <Header>Wishlist</Header>
       </div>
-      <PurchasedItem />
-      <PurchasedItem />
-      <PurchasedItem />
-      <PurchasedItem />
+      <Item />
+      <Item />
+      <Item />
+      <Item />
     </Container>
   );
 }
 
-export default PurchasedHistory;
+export default Wishlist;

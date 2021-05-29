@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import PurchasedHistory from "./pages/PurchasedHistory";
 import SearchPage from "./pages/Search";
+import Wishlist from "./pages/Wishlist";
 
 function App() {
   return (
@@ -11,9 +12,11 @@ function App() {
       <Switch>
         <Route path="/login" component={Login} />
         <Route exact path="/beranda" component={Home} />
+        <Route exact path="/" component={Home} />
         <Route path="/search-page" component={SearchPage} />
         <Route path="/product/:id" component={DetailProduct} />
-        <Route path="/profile" component={PurchasedHistory} />
+        <Route path="/wishlist" component={Wishlist} />
+        <Route path="/purchase" component={PurchasedHistory} />
       </Switch>
     </Router>
   );

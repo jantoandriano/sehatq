@@ -1,7 +1,7 @@
 import React from "react";
 import { Wrapper, Image, Body, Title, Price } from "./styles";
 
-function PurchasedResult() {
+function PurchasedItem() {
   return (
     <Wrapper>
       <Image />
@@ -13,4 +13,4 @@ function PurchasedResult() {
   );
 }
 
-export default PurchasedResult;
+export default PurchasedItem;

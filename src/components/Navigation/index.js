@@ -5,9 +5,9 @@ function Navigation() {
   return (
     <Wrapper>
       <NavbarItem to="/beranda">Home</NavbarItem>
-      <NavbarItem to="/feed">Feed</NavbarItem>
-      <NavbarItem to="/cart">Cart</NavbarItem>
-      <NavbarItem to="/profile">Profile</NavbarItem>
+      <NavbarItem to="/">Feed</NavbarItem>
+      <NavbarItem to="/purchase">Cart</NavbarItem>
+      <NavbarItem to="/wishlist">Profile</NavbarItem>
     </Wrapper>
   );
 }
