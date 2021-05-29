@@ -1,6 +1,7 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
-import { Container, HStack } from "../styles";
+import { useHistory, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Container, HStack, FlexEnd } from "../styles";
 import {
   ProductImage,
   Back,
@@ -17,50 +18,37 @@ import { Like } from "../Home/styles";
 
 function DetailProduct() {
   const history = useHistory();
+  const { id } = useParams();
+  const { imageUrl, title, description, price } = useSelector((state) =>
+    state.products.productsName.find((product) => product.id === id)
+  );
 
   const handleBack = () => {
     history.goBack();
   };
 
-  const handleShare = () => window.alert("Product shared")
+  const handleShare = () => window.alert("Product shared");
 
   return (
     <Container>
-      <ProductImage>
-        <HStack style={{ margin: "10px 10px" }}>
-          <Back src={arrow} onClick={handleBack} />
-          <Share src={share} onClick={handleShare} />
-        </HStack>
-      </ProductImage>
+      <div style={{ position: "relative" }}>
+        <ProductImage src={imageUrl} />
+        <Back src={arrow} onClick={handleBack} />
+        <Share src={share} onClick={handleShare} />
+      </div>
 
       <ProductBody>
         <HStack>
-          <ProductTitle>Barang 1</ProductTitle>
+          <ProductTitle>{title}</ProductTitle>
           <Like />
         </HStack>
-        <ProductDesc>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel risus
-          commodo viverra maecenas accumsan lacus. Magna ac placerat vestibulum
-          lectus mauris ultrices eros in. A pellentesque sit amet porttitor
-          eget. Lectus mauris ultrices eros in cursus turpis massa tincidunt.
-          Dictumst vestibulum rhoncus est pellentesque. Potenti nullam ac tortor
-          vitae purus faucibus ornare suspendisse sed. Tortor vitae purus
-          faucibus ornare suspendisse sed nisi. Dolor sit amet consectetur
-          adipiscing elit
-        </ProductDesc>
+        <ProductDesc>{description}</ProductDesc>
       </ProductBody>
 
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "flex-end",
-          alignItems: "center",
-        }}
-      >
-        <ProductPrice>$400</ProductPrice>
+      <FlexEnd>
+        <ProductPrice>{price}</ProductPrice>
         <BuyButton>Buy</BuyButton>
-      </div>
+      </FlexEnd>
     </Container>
   );
 }

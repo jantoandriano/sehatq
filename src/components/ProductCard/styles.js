@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 export const Image = styled.img`
   width: 100%;
   height: 200px;
-  background-color: lavender;
+  object-fit: contain;
+  border: 1px solid black;
 `;
 
 export const ProductName = styled.p`
@@ -19,4 +20,5 @@ export const Wrapper = styled.div`
 
 export const LinkWrapper = styled(Link)`
   text-decoration: none;
+  color: black; 
 `;

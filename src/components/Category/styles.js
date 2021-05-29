@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Image = styled.img`
   width: 80px;
   height: 80px;
-  background-color: lavender;
+  border: 1px solid black;
 `;
 
 export const CategoryTitle = styled.p`

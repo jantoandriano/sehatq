@@ -1,11 +1,11 @@
 import React from 'react'
 import { Image, CategoryTitle, Wrapper } from "./styles"
 
-function Category({src, title}) {
+function Category({imageUrl, name}) {
     return (
         <Wrapper>
-            <Image/>
-            <CategoryTitle>{title}</CategoryTitle>
+            <Image src={imageUrl}/>
+            <CategoryTitle>{name}</CategoryTitle>
         </Wrapper>
     )
 }

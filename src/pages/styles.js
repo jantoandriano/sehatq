@@ -16,4 +16,10 @@ export const HStack = styled.div`
 
 export const Container = styled.div`
   margin: 30px 20px;
-`
+`;
+
+export const FlexEnd = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+`;

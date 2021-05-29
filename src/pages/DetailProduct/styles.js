@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const ProductImage = styled.div`
+export const ProductImage = styled.img`
   width: 100%;
   height: 200px;
   background-color: lavender;
@@ -9,11 +9,17 @@ export const ProductImage = styled.div`
 export const Back = styled.img`
   width: 40px;
   height: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
 `;
 
 export const Share = styled.img`
   width: 30px;
   height: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
 `;
 
 export const ProductBody = styled.div`
