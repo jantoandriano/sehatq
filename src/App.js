@@ -22,12 +22,12 @@ function App() {
       <Router>
         <Switch>
           <Route path="/login" component={Login} />
-          <PrivateRoute path="/" component={Home} />
-          <PrivateRoute path="/beranda" component={Home} />
-          <PrivateRoute path="/search-page" component={SearchPage} />
-          <PrivateRoute path="/product/:id" component={DetailProduct} />
-          <PrivateRoute path="/wishlist" component={Wishlist} />
-          <PrivateRoute path="/purchase" component={PurchasedHistory} />
+          <PrivateRoute exact path="/" component={Home} />
+          <PrivateRoute exact path="/beranda" component={Home} />
+          <PrivateRoute exact path="/search-page" component={SearchPage} />
+          <PrivateRoute exact path="/product/:id" component={DetailProduct} />
+          <PrivateRoute exact path="/wishlist" component={Wishlist} />
+          <PrivateRoute exact path="/purchase" component={PurchasedHistory} />
         </Switch>
       </Router>
       <ToastContainer autoClose={2000} />
@@ -41,16 +41,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
     render={(props) =>
-      isLogin() ? (
-        <Component {...props} />
-      ) : (
-        <Redirect
-          to={{
-            pathname: "/login",
-            state: { from: props.location },
-          }}
-        />
-      )
+      isLogin() ? <Component {...props} /> : <Redirect to="/login" />
     }
   />
 );
