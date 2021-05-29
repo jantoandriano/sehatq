@@ -21,7 +21,7 @@ export const productSlice = createSlice({
       let purchasedItem = state.productsName.find(
         (item) => item.id === action.payload
       );
-      
+
       state.purchasedProducts = [...state.purchasedProducts, purchasedItem];
       toast.success("Yeah :)");
     },
@@ -29,7 +29,10 @@ export const productSlice = createSlice({
       let wishListItem = state.productsName.find(
         (item) => item.id === action.payload
       );
+
       state.wishListProducts = [...state.wishListProducts, wishListItem];
+      toast.success("Added to wishlist");
+
     },
   },
 });

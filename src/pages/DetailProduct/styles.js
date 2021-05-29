@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { AiOutlineHeart } from 'react-icons/ai';
+import { AiOutlineHeart } from "react-icons/ai";
+import { BsFillHeartFill } from "react-icons/bs";
 
 export const ProductImage = styled.img`
   width: 100%;
@@ -55,9 +56,13 @@ export const BuyButton = styled.div`
   margin-left: 10px;
 `;
 
-export const Love = styled(AiOutlineHeart)`
+export const LoveFill = styled(BsFillHeartFill)`
   width: 30px;
   height: 30px;
-  
-`
+  color: red;
+`;
 
+export const LoveOutline = styled(AiOutlineHeart)`
+  width: 30px;
+  height: 30px;
+`;

@@ -11,20 +11,19 @@ import {
   ProductDesc,
   ProductPrice,
   BuyButton,
-  Love
+  LoveFill,
+  LoveOutline,
 } from "./styles";
 import arrow from "../../assets/arrow_back.svg";
 import share from "../../assets/share.svg";
 import { purchaseProduct, addWishList } from "../../features/productSlice";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 
 function DetailProduct() {
   const history = useHistory();
   const { id } = useParams();
-  const dispatch = useDispatch()
-  const { imageUrl, title, description, price } = useSelector((state) =>
+  const dispatch = useDispatch();
+  const { imageUrl, title, description, price, loved } = useSelector((state) =>
     state.products.productsName.find((product) => product.id === id)
   );
 
@@ -36,11 +35,11 @@ function DetailProduct() {
 
   const handleBuy = () => {
     dispatch(purchaseProduct(id));
-  }
+  };
 
   const handleAddWishList = () => {
-    dispatch(addWishList(id))
-  }
+    dispatch(addWishList(id));
+  };
 
   return (
     <Container>
@@ -53,17 +52,19 @@ function DetailProduct() {
       <ProductBody>
         <HStack>
           <ProductTitle>{title}</ProductTitle>
-          <Love onClick={handleAddWishList}/>
+          {loved ? (
+            <LoveFill onClick={handleAddWishList} />
+          ) : (
+            <LoveOutline onClick={handleAddWishList} />
+          )}
         </HStack>
         <ProductDesc>{description}</ProductDesc>
       </ProductBody>
 
       <FlexEnd>
         <ProductPrice>{price}</ProductPrice>
-        <BuyButton onClick={handleBuy} >Buy</BuyButton>
+        <BuyButton onClick={handleBuy}>Buy</BuyButton>
       </FlexEnd>
-      <ToastContainer autoClose={2000} />
-
     </Container>
   );
 }

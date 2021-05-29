@@ -1,15 +1,14 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { Image, ProductName, Wrapper, LinkWrapper, Love } from "./styles";
+import { Image, ProductName, Wrapper, LinkWrapper } from "./styles";
+import { LoveOutline, LoveFill } from "../../pages/styles";
 import { addWishList } from "../../features/productSlice";
 
-function ProductCard({ id, imageUrl, title }) {
-  
-  const dispatch = useDispatch()
-
+function ProductCard({ id, imageUrl, title, loved }) {
+  const dispatch = useDispatch();
   const handleAddWishList = () => {
-    dispatch(addWishList(id))
-  }
+    dispatch(addWishList(id));
+  };
 
   return (
     <Wrapper>
@@ -17,8 +16,12 @@ function ProductCard({ id, imageUrl, title }) {
         <Image src={imageUrl} />
         <ProductName>{title}</ProductName>
       </LinkWrapper>
-      <Love onClick={handleAddWishList} />
 
+      {!loved ? (
+        <LoveOutline onClick={handleAddWishList} />
+      ) : (
+        <LoveFill onClick={handleAddWishList} />
+      )}
     </Wrapper>
   );
 }

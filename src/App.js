@@ -7,6 +7,8 @@ import SearchPage from "./pages/Search";
 import Wishlist from "./pages/Wishlist";
 import store from "./store";
 import { Provider } from "react-redux";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
           <Route path="/purchase" component={PurchasedHistory} />
         </Switch>
       </Router>
+      <ToastContainer autoClose={2000} />
     </Provider>
   );
 }
