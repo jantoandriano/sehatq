@@ -13,10 +13,16 @@ export const authSlice = createSlice({
     loginGmail: (state, action) => {
       state.access_token = action.payload;
     },
+    fakeLogin: () => {
+      localStorage.setItem(
+        "access_token",
+        "ya29.a0AfH6SMBlwPgG00n1nwdtjKhWHvFZzAEQHK9I7NX_-LS8ZRktMbqfrQ0LTUGmzj88Enqp9s2H_"
+      );
+    },
   },
 });
 
-export const { loginFacebook, loginGmail } = authSlice.actions;
+export const { loginFacebook, loginGmail, fakeLogin } = authSlice.actions;
 
 export default authSlice.reducer;
 

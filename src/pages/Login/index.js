@@ -15,6 +15,7 @@ import { VStack, HStack } from "../styles";
 import {
   handleLoginFacebook,
   handleLoginGmail,
+  fakeLogin
 } from "../../features/authSlice";
 import { FaFacebookSquare } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
@@ -24,11 +25,7 @@ function Login() {
   const dispatch = useDispatch();
 
   const handleSignIn = () => {
-    localStorage.setItem(
-      "access_token",
-      "ya29.a0AfH6SMBlwPgG00n1nwdtjKhWHvFZzAEQHK9I7NX_-LS8ZRktMbqfrQ0LTUGmzj88Enqp9s2H_"
-    );
-    history.push("/beranda");
+    dispatch(fakeLogin(history.push("/")))
   };
 
   const handleFacebook = async () => {
