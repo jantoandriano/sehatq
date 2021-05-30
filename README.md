@@ -9,7 +9,7 @@
 
 # important 
 - Biasanya saya implement SSR, SEO, dan AMP page menggunakan framework dari Reactjs yaitu Nextjs
-- Tapi di keterangan tidak ditulis apakah bisa pake tools lain selain pure Reactnya menggunakan client side React saja. Jujur saja saya masih harus belajar untuk cara hydrate app nya di server dari client side.
+- Tapi di keterangan tidak ditulis apakah bisa pake tools lain selain pure Reactnya menggunakan client side React saja terus implement SSR nya. Jujur saja saya masih harus belajar untuk cara hydrate app nya di server dari client side.
 - Jika berkenan saya bisa di kasih waktu lagi untuk pake Nextjs nya.
 
 
