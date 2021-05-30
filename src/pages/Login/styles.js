@@ -12,12 +12,14 @@ export const Title = styled.h1`
 export const InputPassword = styled.input`
   width: 100%;
   height: 40px;
+  padding-left: 15px;
 `;
 
 export const InputEmail = styled.input`
   width: 100%;
   height: 40px;
   margin-bottom: 30px;
+  padding-left: 15px;
 `;
 
 export const Flex = styled.div`

@@ -24,6 +24,10 @@ function Login() {
   const dispatch = useDispatch();
 
   const handleSignIn = () => {
+    localStorage.setItem(
+      "access_token",
+      "ya29.a0AfH6SMBlwPgG00n1nwdtjKhWHvFZzAEQHK9I7NX_-LS8ZRktMbqfrQ0LTUGmzj88Enqp9s2H_"
+    );
     history.push("/beranda");
   };
 
@@ -38,8 +42,10 @@ function Login() {
   return (
     <Wrapper>
       <Title>LOGIN</Title>
-      <InputEmail />
-      <InputPassword />
+      <VStack>
+        <InputEmail type="text" />
+        <InputPassword type="password" />
+      </VStack>
 
       <HStack style={{ marginTop: "20px" }}>
         <Checkbox />
