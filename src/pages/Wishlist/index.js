@@ -23,8 +23,8 @@ function Wishlist() {
         <Back src={arrow} onClick={handleBack} />
         <Header>Wishlist</Header>
       </div>
-      {wishListProducts.map((val) => (
-        <Item key={val.id} {...val} />
+      {wishListProducts.map((val, idx) => (
+        <Item key={idx} {...val} />
       ))}
     </Container>
   );

@@ -24,8 +24,8 @@ function PurchasedHistory() {
         <Header>Purchase History</Header>
       </div>
       {purchasedItem.length ? (
-        purchasedItem.map((val) => (
-          <HStack>
+        purchasedItem.map((val, idx) => (
+          <HStack key={idx}>
             <Item {...val} />
           </HStack>
         ))
